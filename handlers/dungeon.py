@@ -8,7 +8,7 @@ from services import database as db
 from utils.helpers import check_cooldown, set_cooldown, format_seconds, exp_to_next, RARITY_EMOJI, loot_roll
 
 router = Router()
-DUNGEON_COOLDOWN = 14400  # 4 jam
+DUNGEON_COOLDOWN = 600  # 10 menit
 
 @router.message(Command("dungeon", "d"))
 async def cmd_dungeon(msg: Message):
