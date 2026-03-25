@@ -40,7 +40,7 @@ async def cmd_boss(msg: Message):
         ON CONFLICT (user_id, boss_id) DO UPDATE SET damage=boss_damage.damage+$3
     """, msg.from_user.id, boss["id"], dmg)
 
-    await set_cooldown(msg.from_user.id, "boss", 60)
+    await set_cooldown(msg.from_user.id, "boss", 1)
 
     exp_reward = dmg // 2
     await db.execute("UPDATE heroes SET exp=exp+$1 WHERE user_id=$2", exp_reward, msg.from_user.id)
